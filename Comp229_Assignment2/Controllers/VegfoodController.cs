@@ -17,13 +17,13 @@ namespace Comp229_Assignment2.Controllers
         
         public ActionResult Index()
         {
-            return View(db.Vegfoods.ToList());
+            return View(db.Vegfood.ToList());
         }
         [Authorize(Roles = "Admin")]
         // GET: Appetizers for Admin
         public ActionResult Admin()
         {
-            return View(db.Vegfoods.ToList());
+            return View(db.Vegfood.ToList());
         }
         // GET: Appetizers/Details/5
         public ActionResult Details(int? id)
@@ -32,7 +32,7 @@ namespace Comp229_Assignment2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Vegfood vegfood = db.Vegfoods.Find(id);
+            Vegfood vegfood = db.Vegfood.Find(id);
             if (vegfood == null)
             {
                 return HttpNotFound();
@@ -58,7 +58,7 @@ namespace Comp229_Assignment2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Vegfoods.Add(vegfood);
+                db.Vegfood.Add(vegfood);
                 db.SaveChanges();
                 return RedirectToAction("Admin");
             }
@@ -74,7 +74,7 @@ namespace Comp229_Assignment2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Vegfood vegfood = db.Vegfoods.Find(id);
+            Vegfood vegfood = db.Vegfood.Find(id);
             if (vegfood == null)
             {
                 return HttpNotFound();
@@ -107,7 +107,7 @@ namespace Comp229_Assignment2.Controllers
              {
                  return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
              }
-             Vegfood vegfood = db.Vegfoods.Find(id);
+             Vegfood vegfood = db.Vegfood.Find(id);
              if (vegfood == null)
              {
                  return HttpNotFound();
@@ -120,8 +120,8 @@ namespace Comp229_Assignment2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Vegfood vegfood = db.Vegfoods.Find(id);
-            db.Vegfoods.Remove(vegfood);
+            Vegfood vegfood = db.Vegfood.Find(id);
+            db.Vegfood.Remove(vegfood);
             db.SaveChanges();
             return RedirectToAction("Admin");
         }

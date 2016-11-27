@@ -19,13 +19,13 @@ namespace Comp229_Assignment2.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Vegfoods.ToList());
+            return View(db.Snacks.ToList());
         }
         [Authorize(Roles = "Admin")]
         // GET: Appetizers for Admin
         public ActionResult Admin()
         {
-            return View(db.Vegfoods.ToList());
+            return View(db.Snacks.ToList());
         }
         // GET: Appetizers/Details/5
         public ActionResult Details(int? id)
@@ -34,12 +34,12 @@ namespace Comp229_Assignment2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Vegfood vegfood = db.Vegfoods.Find(id);
-            if (vegfood == null)
+            Snack snack = db.Snacks.Find(id);
+            if (snack == null)
             {
                 return HttpNotFound();
             }
-            return View(vegfood);
+            return View(snack);
         }
 
 
@@ -56,16 +56,16 @@ namespace Comp229_Assignment2.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,ShortDescription,LongDescription,Price,Image")] Vegfood vegfood)
+        public ActionResult Create([Bind(Include = "Id,Name,ShortDescription,LongDescription,Price,Image")] Snack snack)
         {
             if (ModelState.IsValid)
             {
-                db.Vegfoods.Add(vegfood);
+                db.Snacks.Add(snack);
                 db.SaveChanges();
                 return RedirectToAction("Admin");
             }
 
-            return View(vegfood);
+            return View(snack);
         }
 
         // GET: AdminAppetizers/Edit/5
@@ -76,12 +76,12 @@ namespace Comp229_Assignment2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Vegfood vegfood = db.Vegfoods.Find(id);
-            if (vegfood == null)
+            Snack snack = db.Snacks.Find(id);
+            if (snack == null)
             {
                 return HttpNotFound();
             }
-            return View(vegfood);
+            return View(snack);
         }
 
         // POST: AdminAppetizers/Edit/5
@@ -109,12 +109,12 @@ namespace Comp229_Assignment2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Vegfood vegfood = db.Vegfoods.Find(id);
-            if (vegfood == null)
+            Snack snack = db.Snacks.Find(id);
+            if (snack == null)
             {
                 return HttpNotFound();
             }
-            return View(vegfood);
+            return View(snack);
         }
 
         //POST: AdminAppetizers/Delete/5
@@ -122,8 +122,8 @@ namespace Comp229_Assignment2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Vegfood vegfood = db.Vegfoods.Find(id);
-            db.Vegfoods.Remove(vegfood);
+            Snack snack = db.Snacks.Find(id);
+            db.Snacks.Remove(snack);
             db.SaveChanges();
             return RedirectToAction("Admin");
         }

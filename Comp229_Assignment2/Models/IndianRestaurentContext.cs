@@ -15,7 +15,7 @@ namespace Comp229_Assignment2.Models
         public virtual DbSet<Dessert> Desserts { get; set; }
         public virtual DbSet<Non_Vegfood> Non_Vegfood { get; set; }
         public virtual DbSet<Snack> Snacks { get; set; }
-        public virtual DbSet<Vegfood> Vegfoods { get; set; }
+        public virtual DbSet<Vegfood> Vegfood { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
