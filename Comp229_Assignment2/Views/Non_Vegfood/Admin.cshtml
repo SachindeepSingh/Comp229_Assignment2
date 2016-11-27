@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Comp229_Assignment2.Models.Non_Vegfood>
+@{
+    ViewBag.Title = "Admin Non_Vegfoods";
+}
+<h2>Admin Non_Vegfoods</h2>
+<p>
+    @Html.ActionLink("Create New Non_Vegfood", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Non_VegfoodName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Non_VegfoodShortDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Non_VegfoodPrice)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Non_VegfoodName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Non_VegfoodShortDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Non_VegfoodPrice)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Non_VegfoodId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Non_VegfoodId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Non_VegfoodId })
+            </td>
+        </tr>
+    }
+</table>

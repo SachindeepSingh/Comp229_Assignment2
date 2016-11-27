@@ -1,0 +1,42 @@
+﻿@model Comp229_Assignment2.Models.Non_Vegfood
+@{
+    ViewBag.Title = "Non_Vegfood Details";
+}
+<h2>Non_Vegfood Details</h2>
+<div>
+    <h4>Non_Vegfood</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Non_VegfoodName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Non_VegfoodName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Non_VegfoodLongDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Non_VegfoodLongDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Non_VegfoodPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Non_VegfoodPrice)
+        </dd>
+        <dd>
+            <img src="@Url.Content(Model.Non_VegfoodImage)" class="img-rounded" />
+        </dd>
+    </dl>
+</div>
+<p>
+    @if (HttpContext.Current.User.IsInRole("Admin"))
+    {
+        @Html.ActionLink("Back to List", "Admin")
+    }
+    else
+    {
+        @Html.ActionLink("Back to List", "Index")
+    }
+</p>

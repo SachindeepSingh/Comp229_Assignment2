@@ -9,6 +9,7 @@
     padding-right: 15px;
 }
 
+
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -19,6 +20,45 @@
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
-textarea {
-    max-width: 280px;
+.navbar {
+   position:absolute;
+   background: rgba(128, 128, 128, 0.55);
+   border-color: transparent;
+   z-index:10;
+}
+.nav.navbar-nav li a,footer{
+    color:white;
+    font-size:larger;
+}
+.carousel {
+    position: absolute;
+    top: 0px;
+    padding-left: 74px;
+    padding-right: 73px;
+    width:100%;
+}
+.nav.navbar-nav li a:hover{
+    background-color:black;
+    color:white;
+}
+.body-content{
+    background-color:rgba(128, 128, 128, 0.45);
+    border:thin;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+}
+.dropdown-menu{
+    background: rgba(128, 128, 128, 0.55)
+}
+img{
+    
+}
+@media only screen and (max-width: 768px) {
+    .carousel {
+    position: absolute;
+    top: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
+    width:100%;
+}
 }

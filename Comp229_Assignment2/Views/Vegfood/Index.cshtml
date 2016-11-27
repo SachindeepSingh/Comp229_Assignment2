@@ -1,0 +1,38 @@
+﻿
+
+@model IEnumerable<Comp229_Assignment2.Models.Vegfood>
+@{
+    ViewBag.Title = "Vegfood";
+}
+<h2>Veg Food</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VegfoodName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VegfoodShortDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VegfoodPrice)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VegfoodName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VegfoodShortDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VegfoodPrice)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.VegfoodId }, new { @class = "btn btn-success" })
+            </td>
+        </tr>
+    }
+</table>

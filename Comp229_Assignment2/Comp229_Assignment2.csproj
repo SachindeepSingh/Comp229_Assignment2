@@ -52,6 +52,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -168,18 +170,33 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DessertsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\Non_VegfoodController.cs" />
+    <Compile Include="Controllers\SnacksController.cs" />
+    <Compile Include="Controllers\VegfoodController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Dessert.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IndianRestaurentContext.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Non_Vegfood.cs" />
+    <Compile Include="Models\Snack.cs" />
+    <Compile Include="Models\Vegfood.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Asset\about-us.gif" />
+    <Content Include="Asset\banner-2.jpg" />
+    <Content Include="Asset\Contact_us.png" />
+    <Content Include="Asset\Menu.png" />
+    <Content Include="Asset\paneer.JPG" />
+    <Content Include="Asset\Shahi.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -234,6 +251,32 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Vegfood\Index.cshtml" />
+    <Content Include="Views\Vegfood\Admin.cshtml" />
+    <Content Include="Views\Vegfood\Details.cshtml" />
+    <Content Include="Views\Vegfood\Create.cshtml" />
+    <Content Include="Views\Vegfood\Edit.cshtml" />
+    <Content Include="Views\Vegfood\DeleteConfirmed.cshtml" />
+    <Content Include="Views\Vegfood\Delete.cshtml" />
+    <Content Include="Views\Non_Vegfood\Index.cshtml" />
+    <Content Include="Views\Non_Vegfood\Admin.cshtml" />
+    <Content Include="Views\Non_Vegfood\Details.cshtml" />
+    <Content Include="Views\Non_Vegfood\Create.cshtml" />
+    <Content Include="Views\Non_Vegfood\Edit.cshtml" />
+    <Content Include="Views\Non_Vegfood\DeleteConfirmed.cshtml" />
+    <Content Include="Views\Non_Vegfood\Delete.cshtml" />
+    <Content Include="Views\Snacks\Index.cshtml" />
+    <Content Include="Views\Snacks\Admin.cshtml" />
+    <Content Include="Views\Snacks\Details.cshtml" />
+    <Content Include="Views\Snacks\Create.cshtml" />
+    <Content Include="Views\Snacks\Edit.cshtml" />
+    <Content Include="Views\Snacks\Delete.cshtml" />
+    <Content Include="Views\Desserts\Index.cshtml" />
+    <Content Include="Views\Desserts\Admin.cshtml" />
+    <Content Include="Views\Desserts\Details.cshtml" />
+    <Content Include="Views\Desserts\Create.cshtml" />
+    <Content Include="Views\Desserts\Edit.cshtml" />
+    <Content Include="Views\Desserts\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
